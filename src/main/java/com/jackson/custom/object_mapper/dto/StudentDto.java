@@ -4,21 +4,20 @@
  * Version      : 	
  * History  :	
  * *************************************************************/
-package com.jackson.custom.object_mapper.model;
+package com.jackson.custom.object_mapper.dto;
 
 import lombok.Data;
 
 /**
- * StudentEntity Class.
+ * EntityDto Class.
  * <p>
  * </p>
  *
  * @author
  */
 @Data
-public class StudentEntity {
+public class StudentDto {
 
-    private Long studentId;
     private String studentName;
     private Integer studentAge;
     private String studentAddress;
