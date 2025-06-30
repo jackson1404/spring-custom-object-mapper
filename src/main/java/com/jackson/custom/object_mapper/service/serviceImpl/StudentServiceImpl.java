@@ -30,7 +30,7 @@ public class StudentServiceImpl implements StudentService {
     private StudentRepository studentRepository;
 
     @Override
-    public StudentDto getStudentByName(String studentName) throws NoPermissionObjectMappingException {
+    public StudentDto getStudentByName(String studentName)   {
         StudentEntity student = studentRepository.findStudentByName(studentName);
         return ObjectMapper.map(student, StudentDto.class);
     }

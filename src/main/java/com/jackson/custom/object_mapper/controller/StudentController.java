@@ -32,7 +32,7 @@ public class StudentController {
     private StudentService studentService;
 
     @GetMapping("/getStudentByName")
-    public ResponseEntity<?> getStudentByName(@RequestParam("studentName") String studentName) throws NoPermissionObjectMappingException {
+    public ResponseEntity<?> getStudentByName(@RequestParam("studentName") String studentName) {
         StudentDto student = studentService.getStudentByName(studentName);
         return new ResponseEntity<>(student, HttpStatus.OK);
     }

@@ -14,7 +14,13 @@ package com.jackson.custom.object_mapper.utilities.model_mapper;
  * @author
  */
 
-public class NoPermissionObjectMappingException extends Throwable {
-    public <D extends Mappable> NoPermissionObjectMappingException(Class<D> destinationType, Class<? extends Mappable> aClass) {
+public class NoPermissionObjectMappingException extends RuntimeException {
+
+    public NoPermissionObjectMappingException(Class<? extends Mappable> type, Class<? extends Mappable> sourceType) {
+        super(classLinkCreator(type) + " has no permission\n\tto map " + classLinkCreator(sourceType));
+    }
+
+    private static String classLinkCreator(Class<?> type) {
+        return type.getTypeName().replace("." + type.getSimpleName(), "") + "(" + type.getSimpleName() + ".java:0)";
     }
 }

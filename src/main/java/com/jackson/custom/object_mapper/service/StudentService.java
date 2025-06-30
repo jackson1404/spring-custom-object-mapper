@@ -19,7 +19,7 @@ import com.jackson.custom.object_mapper.utilities.model_mapper.NoPermissionObjec
  */
 public interface StudentService {
 
-    StudentDto getStudentByName(String studentName) throws NoPermissionObjectMappingException;
+    StudentDto getStudentByName(String studentName);
 
 
 
