@@ -39,6 +39,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<StudentDto> getAllStudents() {
-        return null;
+
+        List<StudentEntity> studentEntityList = studentRepository.findAll();
+        return ObjectMapper.map(studentEntityList, StudentDto.class);
     }
 }
