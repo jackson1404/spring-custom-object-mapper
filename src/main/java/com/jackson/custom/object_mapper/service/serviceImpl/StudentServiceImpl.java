@@ -16,6 +16,8 @@ import com.jackson.custom.object_mapper.utilities.model_mapper.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * StudentServiceImpl Class.
  * <p>
@@ -33,5 +35,10 @@ public class StudentServiceImpl implements StudentService {
     public StudentDto getStudentByName(String studentName)   {
         StudentEntity student = studentRepository.findStudentByName(studentName);
         return ObjectMapper.map(student, StudentDto.class);
+    }
+
+    @Override
+    public List<StudentDto> getAllStudents() {
+        return null;
     }
 }

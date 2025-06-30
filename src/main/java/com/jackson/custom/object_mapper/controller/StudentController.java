@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * StudentController Class.
  * <p>
@@ -35,6 +37,12 @@ public class StudentController {
     public ResponseEntity<?> getStudentByName(@RequestParam("studentName") String studentName) {
         StudentDto student = studentService.getStudentByName(studentName);
         return new ResponseEntity<>(student, HttpStatus.OK);
+    }
+
+    @GetMapping("/getAllStudents")
+    public ResponseEntity<?> getAllStudents(){
+        List<StudentDto> studentDtoList = studentService.getAllStudents();
+        return new ResponseEntity<>(studentDtoList, HttpStatus.OK);
     }
 
 }

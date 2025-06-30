@@ -10,6 +10,8 @@ import com.jackson.custom.object_mapper.dto.StudentDto;
 import com.jackson.custom.object_mapper.model.StudentEntity;
 import com.jackson.custom.object_mapper.utilities.model_mapper.NoPermissionObjectMappingException;
 
+import java.util.List;
+
 /**
  * StudentService Class.
  * <p>
@@ -22,6 +24,5 @@ public interface StudentService {
     StudentDto getStudentByName(String studentName);
 
 
-
-
+    List<StudentDto> getAllStudents();
 }
