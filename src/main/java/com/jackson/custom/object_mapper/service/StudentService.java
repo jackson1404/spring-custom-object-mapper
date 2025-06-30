@@ -6,6 +6,10 @@
  * *************************************************************/
 package com.jackson.custom.object_mapper.service;
 
+import com.jackson.custom.object_mapper.dto.StudentDto;
+import com.jackson.custom.object_mapper.model.StudentEntity;
+import com.jackson.custom.object_mapper.utilities.model_mapper.NoPermissionObjectMappingException;
+
 /**
  * StudentService Class.
  * <p>
@@ -14,4 +18,10 @@ package com.jackson.custom.object_mapper.service;
  * @author
  */
 public interface StudentService {
+
+    StudentDto getStudentByName(String studentName) throws NoPermissionObjectMappingException;
+
+
+
+
 }

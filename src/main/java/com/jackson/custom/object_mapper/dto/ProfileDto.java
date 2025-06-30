@@ -9,22 +9,18 @@ package com.jackson.custom.object_mapper.dto;
 import com.jackson.custom.object_mapper.model.StudentEntity;
 import com.jackson.custom.object_mapper.utilities.model_mapper.Mappable;
 import com.jackson.custom.object_mapper.utilities.model_mapper.ValidMappable;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 /**
- * EntityDto Class.
+ * ProfileDto Class.
  * <p>
  * </p>
  *
  * @author
  */
+
 @Data
-public class StudentDto implements Mappable {
-
-    private String studentName;
-    private Integer studentAge;
-    private String studentAddress;
-    private String studentPhoneNumber;
-
-
+@ValidMappable(targets = {StudentEntity.class})
+public class ProfileDto implements Mappable {
 }
