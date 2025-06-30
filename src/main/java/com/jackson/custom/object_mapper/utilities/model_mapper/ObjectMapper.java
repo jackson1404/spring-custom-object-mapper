@@ -12,6 +12,7 @@ import org.modelmapper.ModelMapper;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * ObjectMapper Class.
@@ -26,6 +27,10 @@ public final class ObjectMapper {
     private ObjectMapper(){}
 
     public static final ModelMapper modelMapper = new ModelMapper();
+
+    public static void configure(Consumer<ModelMapper> configure){
+        configure.accept(modelMapper);
+    }
 
     public static <S extends Mappable, D extends Mappable> D map(S source, Class<D> destinationType) {
         if (source == null || destinationType == null) return null;
