@@ -12,6 +12,7 @@ import com.jackson.custom.object_mapper.utilities.model_mapper.Mappable;
 import com.jackson.custom.object_mapper.utilities.model_mapper.ValidMappable;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.context.annotation.Profile;
 
 /**
@@ -21,7 +22,6 @@ import org.springframework.context.annotation.Profile;
  *
  * @author
  */
-@Data
 @Entity
 @Table(name = "tbl_students")
 @ValidMappable(targets = {StudentDto.class, ProfileDto.class})
@@ -35,5 +35,53 @@ public class StudentEntity implements Mappable {
     private String studentAddress;
     private String studentPhoneNumber;
 
+    public StudentEntity(){}
 
+    public StudentEntity(Long studentId, String studentName, Integer studentAge, String studentAddress, String studentPhoneNumber) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+        this.studentAge = studentAge;
+        this.studentAddress = studentAddress;
+        this.studentPhoneNumber = studentPhoneNumber;
+    }
+
+    public Long getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public Integer getStudentAge() {
+        return studentAge;
+    }
+
+    public void setStudentAge(Integer studentAge) {
+        this.studentAge = studentAge;
+    }
+
+    public String getStudentAddress() {
+        return studentAddress;
+    }
+
+    public void setStudentAddress(String studentAddress) {
+        this.studentAddress = studentAddress;
+    }
+
+    public String getStudentPhoneNumber() {
+        return studentPhoneNumber;
+    }
+
+    public void setStudentPhoneNumber(String studentPhoneNumber) {
+        this.studentPhoneNumber = studentPhoneNumber;
+    }
 }
